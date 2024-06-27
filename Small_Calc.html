@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <h1 id="demo"></h1>
+  <style>
+    .btns {
+      display: flex;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 20px;
+      height: 30px;
+      width: 40px;
+      gap: 10px;
+
+    }
+
+    .button-1{
+      justify-content: center;
+      background-color:bisque;
+      font-size: 15px;
+      cursor: pointer;
+    }#num1{
+      display: inline-block;
+    border-radius: 2px;
+    border-color: 2px solid black;
+    margin: 5px;
+    
+     } 
+     #num2{
+    border-radius: 2px;
+    border-color: 2px solid black;
+    margin: 5px;
+ }  
+ #op{
+     border-radius: 2px;
+    border-color: 2px solid black;
+    margin: 5px;
+ } 
+ </style>
+</head>
+
+<body>
+  
+  <div>Number 1: <input id="num1" /></div>
+  <div>Number 2: <input id="num2" /></div>
+
+  <div class="btns">
+    <div><button class="button-1" onclick="calc('+')">+</button>
+    </div>
+    <div><button class="button-1" onclick="calc('-')">-</button>
+    </div>
+    <div><button class="button-1" onclick="calc('*')">*</button>
+    </div>
+    <div><button class="button-1" onclick="calc('/')">/</button>
+    </div>
+  </div>
+  <div>Output: <input id="op" /></div>
+
+
+  <script>
+    function calc(operator) {
+      let num1 = parseInt(document.getElementById('num1').value);
+      let num2 = parseInt(document.getElementById('num2').value);
+      let output;
+      switch (operator) {
+        case '+':
+          output = num1 + num2;
+          break;
+        case '-':
+          output = num1 - num2;
+          break;
+        case '*':
+          output = num1 * num2;
+          break;
+        case '/':
+          output = num1 / num2;
+          break;
+      }
+      document.getElementById('op').value = output;
+    }
+
+  </script>
+</body>
+
+</html>
